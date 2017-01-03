@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="app.modelo.Editorial" table="editoriales" schema="libreria">
+		<!--Definimos los type en todas las columnas para que no las obtenga por reflexión (ganamos en rendimiento) -->
+		<!--PRIMARY KEY -->
+		<id name="id" column="ID_EDITORIAL" type="long">
+			<generator class="native"/>
+		</id>
+		<!--FOREIGN KEYS  cascade?-->
+		<set name="libros" inverse="true" lazy ="false">
+			<key column="ID_EDITORIAL"/>
+			<one-to-many class="app.modelo.Libro"/>
+		</set>
+		
+		<!--OTRAS COLUMNAS -->
+		<property name ="nombre" column="NOMBRE" type="string" not-null="true" unique ="true" length="20" lazy ="false" />
+		<property name ="nif" column="NIF" type="string" not-null="true" unique ="true" length="20" lazy ="false" />
+
+		<!--CAMPOS EMBEBIDOS -->
+		<component name="direccion" class= "app.modelo.Direccion">
+			<property name="calle" column="CALLE" type="string"/>
+			<property name="numero" column="NUMERO" type="integer"/>
+			<property name="poblacion" column="POBLACION" type="string"/>
+			<property name="cp" column="CODIGO_POSTAL" type="integer"/>
+			<property name="provincia" column="PROVINCIA" type="string"/>
+		</component>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+body { margin:0; padding:0; font-family:Verdana, Geneva, sans-serif; color:#333; background:#bbb;}
+
+#content { width:690px; margin:0 auto;}
+
+header { float:left; width:690px; height:50px; margin:10px 0;}
+header h1{ margin:0; padding:0; text-align: center; font-size:18px; line-height:48px; color:#eee; text-shadow: 1px 1px 2px #ccc; } 
+section {float:left; width:690px; min-height:360px; margin-bottom:5px; -moz-box-shadow: 8px 8px 5px #888; -webkit-box-shadow: 8px 8px 5px #888; box-shadow: 8px 8px 5px #888;}
+
+footer {float:left; width:690px; height:30px; margin:10px 0;}
+footer p { text-align:center; color:#CCC; font-size:9px;}
+
+/* Esquinas redondeadas */
+header, section, footer {-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; }
+
+/* Fondos */
+header,  footer {
+background: rgb(149,149,149); /* Old browsers */
+background: -moz-linear-gradient(top, rgb(149,149,149) 0%, rgb(13,13,13) 46%, rgb(1,1,1) 50%, rgb(10,10,10) 53%, rgb(78,78,78) 76%, rgb(56,56,56) 87%, rgb(27,27,27) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(149,149,149)), color-stop(46%,rgb(13,13,13)), color-stop(50%,rgb(1,1,1)), color-stop(53%,rgb(10,10,10)), color-stop(76%,rgb(78,78,78)), color-stop(87%,rgb(56,56,56)), color-stop(100%,rgb(27,27,27))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgb(149,149,149) 0%,rgb(13,13,13) 46%,rgb(1,1,1) 50%,rgb(10,10,10) 53%,rgb(78,78,78) 76%,rgb(56,56,56) 87%,rgb(27,27,27) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgb(149,149,149) 0%,rgb(13,13,13) 46%,rgb(1,1,1) 50%,rgb(10,10,10) 53%,rgb(78,78,78) 76%,rgb(56,56,56) 87%,rgb(27,27,27) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgb(149,149,149) 0%,rgb(13,13,13) 46%,rgb(1,1,1) 50%,rgb(10,10,10) 53%,rgb(78,78,78) 76%,rgb(56,56,56) 87%,rgb(27,27,27) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgb(149,149,149) 0%,rgb(13,13,13) 46%,rgb(1,1,1) 50%,rgb(10,10,10) 53%,rgb(78,78,78) 76%,rgb(56,56,56) 87%,rgb(27,27,27) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */	
+}
+section {
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(229,229,229) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(255,255,255)), color-stop(100%,rgb(229,229,229))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgb(255,255,255) 0%,rgb(229,229,229) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgb(255,255,255) 0%,rgb(229,229,229) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgb(255,255,255) 0%,rgb(229,229,229) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(229,229,229) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+/* Formulario */
+form { float:left; width:660px; min-height:200px; margin:15px;}
+form .label { float:left; border: 1px solid #CCC; border-bottom:none; z-index:10; position:relative; background:#FFF;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;}
+form label { margin:4px 5px; padding:0 5px; font-size:12px; color:#333; text-shadow: 1px 1px #ccc;}
+form .input, 
+form .textarea, 
+form .select, 
+form .radioButton, 
+form .checkBox,
+form .action { float:left; width:100%; margin:-1px 0 15px 0; border:1px solid #ccc; z-index:9; position:relative; background:#FFF;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;	
+}
+form .radioButton, 
+form .checkBox { padding:5px 0;}
+form input[type="text"], 
+form input[type="number"],
+form input[type="tel"],
+form input[type="email"],
+form textarea, 
+form select { margin:8px 10px; padding:3px; border:1px dotted #F779E3; font-size:14px; font-family:Arial, Helvetica, sans-serif; }
+form .radioButton .radioItem,
+form .checkBox .checkItem {margin:1px 10px; padding:3px 0; border-top:1px dotted #F779E3; font-size:14px; font-family:Arial, Helvetica, sans-serif; }
+form .radioButton .radioItem:first-child ,
+form .checkBox .checkItem:first-child { border:none;}
+
+form .radioButton .radioItem input[type="radio"] { margin:4px 5px 2px 5px;}
+form .checkBox .checkItem input[type="checkbox"] { margin:4px 5px 2px 5px;}
+
+form .action input[type="button"],
+form .action input[type="reset"],
+form .action input[type="submit"] { float:right; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin:10px; padding:4px 6px; border:1px dotted #F779E3; background:#fff; }
+
+form .s { width:50px;}
+form .m{ width:95px;}
+form .l{ width:160px;}
+form .xl{ width:320px;}
+form .xxl{ width:540px;}
+
+/* hover */
+form input[type="text"]:hover,
+form input[type="number"]:hover,
+form input[type="tel"]:hover,
+form input[type="email"]:hover,
+form textarea:hover,
+form select:hover,
+form .radioButton .radioItem:hover,
+form .checkBox .checkItem:hover { background:#FBE1FB;}
+form .action input[type="button"]:hover,
+form .action input[type="reset"]:hover,
+form .action input[type="submit"]:hover { margin: 8px 10px 12px; background:#FBE1FB; cursor:pointer; -moz-box-shadow: 5px 5px 3px #888; -webkit-box-shadow: 5px 5px 3px #888; box-shadow: 5px 5px 3px #888;}

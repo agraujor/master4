@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="app.modelo.Autor" table="autores" schema="libreria">
+		<!--Definimos los type en todas las columnas para que no las obtenga por reflexión (ganamos en rendimiento) -->
+		<!--PRIMARY KEY -->
+		<id name="id" column="ID_AUTOR" type="long">
+			<generator class="native"/>
+		</id>
+		<!--FOREIGN KEYS  -->	
+		<set name="libros" inverse="true" table="libros_autores" lazy ="false">
+			<key column="ID_AUTOR"/>
+			<many-to-many column="ID_LIBRO" class="app.modelo.Libro" />
+		</set>
+			
+		<!--OTRAS COLUMNAS -->
+		<property name ="nombre" column="NOMBRE" type="string" not-null="true" unique ="false" length="20" lazy ="false" />
+		<property name ="nacionalidad" column="NACIONALIDAD" type="string" not-null="false" unique ="false" length="20" lazy ="false" />
+		<property name ="comentarios" column="COMENTARIOS" type="string" not-null="false" unique ="false" length="200" lazy ="false" />
+			
+
+	</class>
+</hibernate-mapping>
+
+	

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="app.modelo.Libro" table="libros" schema="libreria">
+		<!--Definimos los type en todas las columnas para que no las obtenga por reflexión (ganamos en rendimiento) -->
+		<!--PRIMARY KEY -->
+		<id name="id" column="ID_LIBRO" type="long">
+			<generator class="native"/>
+		</id>
+		<!--FOREIGN KEYS -->
+		<many-to-one name = "editorial" class ="app.modelo.Editorial" lazy ="false" column="ID_EDITORIAL" not-null ="true" cascade="persist,refresh,save-update,merge"/>
+		<set name="autores" table="libros_autores" lazy ="false" cascade="persist,refresh,save-update,merge">
+			<key column="ID_LIBRO"/>
+			<many-to-many column="ID_AUTOR" class="app.modelo.Autor"/>
+		</set>
+		
+		<!--OTRAS COLUMNAS -->
+		<property name ="titulo" column="TITULO" type="string" not-null="true" unique ="false" length="20" lazy ="false" />
+		<property name ="isbn" column="ISBN" type="string" not-null="true" unique ="true" length="20" lazy ="false" />
+		<property name ="publicacion" column="PUBLICACION" type="integer" not-null="true" unique = "false"  lazy ="false" />
+		<property name ="precio" column="PRECIO" type="double" not-null="true" unique = "false"  lazy ="false" />
+		<property name ="descripcion" column="DESCRIPCION" type="string" not-null="false" unique = "false" length="200" lazy ="false" />
+
+	</class>
+</hibernate-mapping>
